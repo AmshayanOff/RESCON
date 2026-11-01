@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RESCON SE | Research Consultation</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&display=swap">
+<style>
+:root{--bg:#e6f2fc;--soft:#f1f8ff;--surf:#fbfdff;--blue:#1e88d8;--blue2:#4db4f0;--navy:#0b3a67;--text:#14283d;--muted:#52708c;--line:#c6dff3;--pad:clamp(16px,3.2vw,56px);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans Tamil",Latha,Roboto,sans-serif;line-height:1.7;font-size:clamp(15px,1.05vw,18px)}
+a{color:var(--blue)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:linear-gradient(90deg,var(--blue),var(--blue2));color:#fff;display:flex;align-items:center;justify-content:space-between;padding:10px var(--pad);flex-wrap:wrap;gap:10px}
+.top nav a{color:#fff;text-decoration:none;margin-right:22px;font-size:.95rem;font-weight:500}
+.lang{display:flex;background:#ffffff33;border-radius:99px;padding:3px}
+.lang button{border:0;background:none;color:#fff;padding:4px 14px;border-radius:99px;cursor:pointer;font:inherit;font-size:.85rem;font-weight:600}
+.lang button.on{background:#fff;color:var(--blue)}
+main{width:100%;padding:0 var(--pad)}
+.banner{margin-top:20px;border-radius:16px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(120deg,#d4ebfc,#a9d8f6);min-height:240px;box-shadow:0 4px 18px #1e88d822}
+.banner img{width:100%;height:auto;max-height:78vh;object-fit:contain;display:block}
+.banner h1{margin:0;font-size:clamp(3rem,13vw,9rem);color:var(--navy)}
+.contact{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:center;padding:18px 2px;color:var(--muted);font-size:.92rem}
+.icons a{display:inline-flex;width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;align-items:center;justify-content:center;text-decoration:none;font-weight:700;font-size:.8rem;margin-left:8px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,56px)}
+section{padding:26px 0}
+.panel{background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:clamp(18px,2vw,32px)}
+h2{color:var(--navy);margin:0 0 10px;font-size:clamp(1.4rem,2vw,2rem)}
+h3{margin:0 0 4px;font-size:1.02rem}
+p{margin:0 0 12px;white-space:pre-line}
+.chips span{display:inline-block;background:#fff;border:1px solid var(--line);color:var(--navy);border-radius:99px;padding:6px 16px;margin:6px 8px 0 0;font-size:.9rem}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.facts div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.facts b{display:block;font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.profile{display:grid;grid-template-columns:clamp(150px,14vw,240px) 1fr;gap:clamp(20px,3vw,48px);align-items:start}
+.photo{aspect-ratio:1;border-radius:14px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.meta{color:var(--muted);font-size:.85rem}
+.tag{display:inline-block;background:#dbeeff;color:var(--blue);padding:1px 10px;border-radius:99px;font-size:.75rem;margin-top:6px}
+.tool{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+input,select,textarea{padding:9px 12px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--text);font:inherit;width:100%}
+.tool input{flex:1;min-width:220px;width:auto}.tool select{width:auto}
+#list,#newslist{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:14px}
+.btn{display:inline-block;padding:9px 20px;border-radius:8px;background:var(--blue);color:#fff;text-decoration:none;border:1px solid var(--blue);cursor:pointer;font:inherit;font-weight:600}
+.btn.o{background:#fff;color:var(--blue)}.btn.d{background:#fff;color:#c0392b;border-color:#c0392b}.btn.sm{padding:4px 12px;font-size:.82rem}
+footer{background:linear-gradient(90deg,var(--blue),var(--blue2));color:#fff;text-align:center;padding:22px;margin-top:40px;font-size:.9rem}
+#login{position:fixed;inset:0;background:#0b3a6766;z-index:60;display:flex;align-items:center;justify-content:center}#login[hidden]{display:none}.lbox{background:#fff;padding:24px;border-radius:14px;width:min(360px,92%);display:grid;gap:10px}
+#fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;display:none;box-shadow:0 4px 14px #0003}
+#panel{position:fixed;top:0;right:0;bottom:0;width:min(480px,100%);background:#fff;border-left:1px solid var(--line);z-index:50;display:none;flex-direction:column;box-shadow:-8px 0 24px #0002;padding-top:env(safe-area-inset-top,0px)}
+#panel.open{display:flex}
+.ph{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:var(--blue);color:#fff}
+.tabs{display:flex;border-bottom:1px solid var(--line);overflow-x:auto}.tabs button{flex:1;padding:10px 8px;border:0;background:#fff;cursor:pointer;font:inherit;font-size:.85rem;color:var(--muted);border-bottom:3px solid transparent;white-space:nowrap}
+.tabs button.on{color:var(--blue);border-color:var(--blue);font-weight:700}
+.pb{padding:16px 18px;overflow:auto;flex:1;display:grid;gap:10px;align-content:start}
+.pb label{font-size:.8rem;color:var(--muted);font-weight:600;display:block;margin-bottom:2px}
+.row{display:flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.pf{padding:12px 18px;border-top:1px solid var(--line);display:flex;gap:8px;align-items:center}
+#msg{font-size:.82rem;color:var(--muted);margin-left:auto}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:16px}.tc{cursor:pointer;text-align:center;transition:.15s}.tc:hover,.tc:focus-visible{transform:translateY(-3px);box-shadow:0 6px 18px #1e88d826;outline:none}.av{width:96px;height:96px;border-radius:50%;margin:0 auto 10px;background:#dbeeff;overflow:hidden;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--blue);font-size:1.6rem}.av img{width:100%;height:100%;object-fit:cover}
+#tover{position:fixed;inset:0;background:#0b3a6755;z-index:44;display:none}#tover.open{display:block}#tside{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:#fff;z-index:46;transform:translateX(105%);transition:transform .25s;box-shadow:-8px 0 30px #0b3a6733;overflow:auto;padding:calc(18px + env(safe-area-inset-top,0px)) 24px 24px}#tside.open{transform:none}.tsh{text-align:right}.tside-av{width:140px;height:140px;font-size:2.4rem;margin:8px auto 14px}.crow{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:.95rem;word-break:break-word}.crow b{min-width:80px;color:var(--muted);font-weight:600}
+@media(max-width:820px){.grid2,.profile{grid-template-columns:1fr}.photo{max-width:200px}}
+</style>
+</head>
+<body>
+<header class="top"><b>Rescon SE</b>
+<nav><a href="#services" data-i="n_services"></a><a href="#about" data-i="n_about"></a><a href="#team" data-i="n_team"></a><a href="#news" data-i="n_news"></a><a href="#publications" data-i="n_pubs"></a><a href="#connect" data-i="n_connect"></a></nav>
+<div class="lang" id="lang"><button data-l="en">EN</button><button data-l="sv">SV</button><button data-l="ta">தமிழ்</button></div></header>
+<main>
+<div class="banner" id="banner"></div>
+<div class="contact"><div id="contact"></div>
+<div class="icons"><a href="https://scholar.google.com/citations?user=hgd4sGQAAAAJ&amp;hl=en" target="_blank" rel="noopener" title="Google Scholar">GS</a><a href="https://www.linkedin.com/company/rescon-ab/" target="_blank" rel="noopener" title="LinkedIn">in</a></div></div>
+<section class="grid2"><div class="panel"><h2 data-i="h_overview"></h2><p id="overview"></p></div><div class="panel"><h2 data-i="h_mission"></h2><p id="mission"></p></div></section>
+<section class="grid2" id="services"><div class="panel"><h2 data-i="n_services"></h2><p id="svdesc"></p><div class="chips" id="chips"></div><div class="facts" id="svmeta" style="margin-top:16px"></div><p style="margin-top:16px"><a class="btn" href="#connect" data-i="request"></a></p></div>
+<div class="panel" id="glance"><h2 data-i="h_glance"></h2><div id="facts" class="facts"></div><h3 style="margin:20px 0 0;color:var(--navy)" data-i="h_specs"></h3><div class="chips" id="specs"></div></div></section>
+<section id="about" class="panel profile"><div class="photo" id="photo"></div><div><h2 id="aname"></h2><p id="atext"></p></div></section>
+<section id="team" hidden><h2 data-i="n_team"></h2><div class="tgrid" id="tgrid"></div></section>
+<section id="news" hidden><h2 data-i="h_news"></h2><div id="newslist"></div></section>
+<section id="publications"><h2 data-i="n_pubs"></h2>
+<div class="tool"><input type="search" id="q" aria-label="Search"><select id="yr" aria-label="Year"></select></div>
+<div id="list"></div></section>
+<section id="connect"><h2 data-i="n_connect"></h2>
+<a class="btn" href="https://scholar.google.com/citations?user=hgd4sGQAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+<a class="btn o" href="https://www.linkedin.com/company/rescon-ab/" target="_blank" rel="noopener">LinkedIn</a></section>
+</main>
+<footer>© <span id="y"></span> RESCON SE · Borås, Sweden · <a href="#" id="adminlink" style="color:#fff;opacity:.8">Admin</a></footer>
+<div id="tover"></div><aside id="tside" aria-label="Team member"><div class="tsh"><button class="btn o sm" id="tclose" data-i="t_close"></button></div><div id="tbody"></div></aside>
+<div id="login" hidden><div class="lbox"><h3>Admin login</h3><input id="le" type="email" placeholder="Email" autocomplete="username"><input id="lp" type="password" placeholder="Password" autocomplete="current-password"><div style="display:flex;gap:8px"><button class="btn" id="lgo">Log in</button><button class="btn o" id="lcancel">Cancel</button></div><span id="lmsg" class="meta"></span></div></div>
+<button class="btn" id="fab">⚙ Admin</button>
+<aside id="panel" aria-label="Admin panel"><div class="ph"><b>Admin dashboard</b><button class="btn o sm" id="close">Close</button></div>
+<div class="tabs" id="tabs"></div><div class="pb" id="pb"></div>
+<div class="pf"><button class="btn" id="save">Save changes</button><button class="btn o sm" id="logout">Log out</button><span id="msg"></span></div></aside>
+
+<script src="config.js"></script>
+<script>
+const API=(window.RESCON_API||"").replace(/\/$/,"");
+const A=u=>/^\/uploads\//.test(u||"")?API+u:u;
+let token=null;try{token=localStorage.getItem("rescon_token")}catch(e){}
+const DEF={
+s:{address:"Västmannagatan 15, 504 37 Borås, Västra Götaland County, Sweden",email:"",
+overview:"RESCON is an independent research consultation firm based in Borås, Sweden, dedicated to driving data excellence and health equity across the life sciences, academia, and public policy sectors.\n\nWe specialize in designing and executing rigorous, nationwide scientific surveys that map the intersection of sociodemographic behavior and modern healthcare systems. Our primary research focus addresses critical demographic gaps in pharmaceutical development—specifically analyzing public awareness, systemic biases, and patient safety frameworks surrounding underrepresented and vulnerable populations (such as pregnant women, children, the elderly, disabled individuals, and refugees).",
+mission:"Advancing health equity, clinical trial diversity, and sociodemographic research across Sweden.\n\nThrough high-quality, ethically designed, and macro-aggregated data collection, RESCON bridges the gap between pharmaceutical safety standards, academic sociodemographic insights, and evidence-based public health regulations. We provide the empirical foundations necessary to build safer, more representative, and inclusive healthcare systems for all members of society.",
+facts:"Industry: Research Services\nCompany size: 11–50 employees\nFounded: 2023\nType: Self-owned\nHeadquarters: Borås, Västra Götaland County\nWorkplace: Hybrid, flexible on-site time\nLocations: Sweden",
+specs:"Clinical Trial Diversity, Health Equity, Public Health Policy, Sociodemographic Research, Scientific Survey Design, Pharmaceutical Research, Quantitative Data Analysis",
+aname:"Professor Kutty Selva Nandakumar",atext:"Docent in Medical Inflammation Science and head of RESCON. Research interests: Inflammation, Immunology, Biochemistry, Microbiology and Dermatology. Verified email at hh.se.",
+svdesc:"RESCON is a research consultancy with F-tax status, led by Professor Kutty Selva Nandakumar. We are conducting a national survey on public health, sociodemographic trends and medical equity in Sweden.",
+avail:"Remote",pricing:"Contact for pricing",banner:"assets/rescon-logo.gif",photo:"assets/nandakumar.jpg"},
+services:["Project Management","Content Strategy","Market Research","Business Consulting"],news:[],
+team:[{id:"t1",name:"Professor Kutty Selva Nandakumar",role:"Head of RESCON · Docent in Medical Inflammation Science",photo:"assets/nandakumar.jpg",bio:"Docent in Medical Inflammation Science and head of RESCON. Research interests: Inflammation, Immunology, Biochemistry, Microbiology and Dermatology.",expertise:"Inflammation, Immunology, Biochemistry, Microbiology, Dermatology",email:"",scholar:"https://scholar.google.com/citations?user=hgd4sGQAAAAJ&hl=en",linkedin:""},
+{id:"t2",name:"Thivakaran Jeganathan",role:"Project Manager, RESCON",photo:"",bio:"Civil Engineer and Project Manager at RESCON, based in Borås. Studies at the University of Borås.",expertise:"Project Management, Civil Engineering, Site Management",email:"",scholar:"",linkedin:"https://www.linkedin.com/in/thivakaran-jeganathan-84487a215/"}],
+pubs:[{"id": "p1", "t": "Regulation of autoantibody activity by the IL-23–TH17 axis determines the onset of autoimmune disease", "a": "R Pfeifle, T Rothe, N Ipseiz, HU Scherer, S Culemann, U Harre, ...", "v": "Nature Immunology 18 (1), 104-113", "c": 409, "y": 2017, "tp": "Immunology", "l": ""}, {"id": "p2", "t": "Collagen type II-specific monoclonal antibody-induced arthritis in mice: description of the disease and the influence of age, sex, and genes", "a": "KS Nandakumar, L Svensson, R Holmdahl", "v": "The American Journal of Pathology 163 (5), 1827-1837", "c": 396, "y": 2003, "tp": "Arthritis", "l": ""}, {"id": "p3", "t": "Inhibiting the C5–C5a receptor axis", "a": "TM Woodruff, KS Nandakumar, F Tedesco", "v": "Molecular Immunology 48 (14), 1631-1642", "c": 389, "y": 2011, "tp": "Complement", "l": ""}, {"id": "p4", "t": "Autoantibodies to citrullinated proteins may induce joint pain independent of inflammation", "a": "G Wigerblad, DB Bas, C Fernades-Cerqueira, A Krishnamurthy, ...", "v": "Annals of the Rheumatic Diseases 75 (4), 730-738", "c": 355, "y": 2016, "tp": "Arthritis", "l": ""}, {"id": "p5", "t": "Structure and pathogenicity of antibodies specific for citrullinated collagen type II in experimental arthritis", "a": "H Uysal, R Bockermann, KS Nandakumar, B Sehnert, E Bajtner, ...", "v": "Journal of Experimental Medicine 206 (2), 449-462", "c": 348, "y": 2009, "tp": "Arthritis", "l": ""}, {"id": "p6", "t": "Recent research on flavonoids and their biomedical applications", "a": "K Wen, X Fang, J Yang, Y Yao, KS Nandakumar, ML Salem, K Cheng", "v": "Current Medicinal Chemistry 28 (5), 1042-1066", "c": 323, "y": 2021, "tp": "Biomedicine", "l": ""}, {"id": "p7", "t": "Macrophages suppress T cell responses and arthritis development in mice by producing reactive oxygen species", "a": "KA Gelderman, M Hultqvist, A Pizzolla, M Zhao, KS Nandakumar, ...", "v": "The Journal of Clinical Investigation 117 (10), 3020-3028", "c": 310, "y": 2007, "tp": "Immunology", "l": ""}, {"id": "p8", "t": "Molecular and cellular pathways contributing to joint damage in rheumatoid arthritis", "a": "Q Fang, C Zhou, KS Nandakumar", "v": "Mediators of Inflammation 2020 (1), 3830212", "c": 277, "y": 2020, "tp": "Arthritis", "l": ""}, {"id": "p9", "t": "Epitope-specific recognition of type II collagen by rheumatoid arthritis antibodies is shared with recognition by antibodies that are arthritogenic in collagen-induced …", "a": "H Burkhardt, T Koller, Å Engström, KS Nandakumar, J Turnay, ...", "v": "Arthritis & Rheumatism 46 (9), 2339-2348", "c": 239, "y": 2002, "tp": "Arthritis", "l": ""}, {"id": "p10", "t": "In vivo imaging of reactive oxygen and nitrogen species in inflammation using the luminescent probe L-012", "a": "A Kielland, T Blom, KS Nandakumar, R Holmdahl, R Blomhoff, H Carlsen", "v": "Free Radical Biology and Medicine 47 (6), 760-766", "c": 227, "y": 2009, "tp": "Inflammation", "l": ""}, {"id": "p11", "t": "Collagen type II (CII)-specific antibodies induce arthritis in the absence of T or B cells but the arthritis progression is enhanced by CII-reactive T cells", "a": "KS Nandakumar, J Bäcklund, M Vestberg, R Holmdahl", "v": "Arthritis Research & Therapy 6 (6), R544", "c": 205, "y": 2004, "tp": "Arthritis", "l": ""}, {"id": "p12", "t": "Antibody-induced arthritis: disease mechanisms and genes involved at the effector phase of arthritis", "a": "KS Nandakumar, R Holmdahl", "v": "Arthritis Research & Therapy 8 (6), 223", "c": 197, "y": 2007, "tp": "Arthritis", "l": ""}, {"id": "p13", "t": "‘SMASH’ recommendations for standardised microscopic arthritis scoring of histological sections from inflammatory arthritis animal models", "a": "S Hayer, MJ Vervoordeldonk, MC Denis, M Armaka, M Hoffmann, ...", "v": "Annals of the Rheumatic Diseases 80 (6), 714-726", "c": 184, "y": 2021, "tp": "Arthritis", "l": ""}, {"id": "p14", "t": "Mannan induces ROS-regulated, IL-17A–dependent psoriasis arthritis-like disease in mice", "a": "I Khmaladze, T Kelkka, S Guerard, K Wing, A Pizzolla, A Saxena, ...", "v": "PNAS 111 (35), E3669-E3678", "c": 183, "y": 2014, "tp": "Dermatology", "l": ""}, {"id": "p15", "t": "Induction of arthritis by single monoclonal IgG anti-collagen type II antibodies and enhancement of arthritis in mice lacking inhibitory FcγRIIB", "a": "KS Nandakumar, M Andren, P Martinsson, E Bajtner, S Hellström, ...", "v": "European Journal of Immunology 33 (8), 2269-2277", "c": 182, "y": 2003, "tp": "Arthritis", "l": ""}, {"id": "p16", "t": "Efficient promotion of collagen antibody induced arthritis (CAIA) using four monoclonal antibodies specific for the major epitopes recognized in both collagen induced arthritis …", "a": "KS Nandakumar, R Holmdahl", "v": "Journal of Immunological Methods 304 (1-2), 126-136", "c": 173, "y": 2005, "tp": "Arthritis", "l": ""}, {"id": "p17", "t": "Complement activation by both classical and alternative pathways is critical for the effector phase of arthritis", "a": "MA Hietala, KS Nandakumar, L Persson, S Fahlén, R Holmdahl, M Pekna", "v": "European Journal of Immunology 34 (4), 1208-1216", "c": 168, "y": 2004, "tp": "Complement", "l": ""}, {"id": "p18", "t": "Ethanol prevents development of destructive arthritis", "a": "IM Jonsson, M Verdrengh, M Brisslert, S Lindblad, M Bokarewa, ...", "v": "PNAS 104 (1), 258-263", "c": 161, "y": 2007, "tp": "Arthritis", "l": ""}, {"id": "p19", "t": "Endoglycosidase treatment abrogates IgG arthritogenicity: importance of IgG glycosylation in arthritis", "a": "KS Nandakumar, M Collin, A Olsén, F Nimmerjahn, AM Blom, JV Ravetch, ...", "v": "European Journal of Immunology 37 (10), 2973-2982", "c": 153, "y": 2007, "tp": "Immunology", "l": ""}, {"id": "p20", "t": "Collagen antibody–induced arthritis evokes persistent pain with spinal glial involvement and transient prostaglandin dependency", "a": "DB Bas, J Su, K Sandor, NM Agalave, J Lundberg, S Codeluppi, ...", "v": "Arthritis & Rheumatism 64 (12), 3886-3896", "c": 148, "y": 2012, "tp": "Arthritis", "l": ""}]};
+
+/* ---------- translations (used only while the text is still the original default) ---------- */
+const UI={
+en:{n_services:"Services",n_about:"About",n_news:"News",n_pubs:"Publications",n_connect:"Connect",n_team:"Team",t_close:"Close",t_exp:"Expertise",t_contact:"Contact",t_links:"Profiles",h_overview:"Overview",h_mission:"Our Mission:",h_glance:"Company at a glance",h_specs:"Specialties",h_news:"Latest updates",request:"Request services",search:"Search publications…",all:"All years",cited:"Cited by",none:"No matches.",more:"Read more",phone:"Phone",email:"Email",avail:"Availability",price:"Pricing"},
+sv:{n_services:"Tjänster",n_about:"Om oss",n_news:"Nyheter",n_pubs:"Publikationer",n_connect:"Kontakt",n_team:"Team",t_close:"Stäng",t_exp:"Expertis",t_contact:"Kontakt",t_links:"Profiler",h_overview:"Översikt",h_mission:"Vårt uppdrag:",h_glance:"Företaget i korthet",h_specs:"Specialområden",h_news:"Senaste nytt",request:"Begär tjänster",search:"Sök publikationer…",all:"Alla år",cited:"Citerad av",none:"Inga träffar.",more:"Läs mer",phone:"Telefon",email:"E-post",avail:"Tillgänglighet",price:"Pris"},
+ta:{n_services:"சேவைகள்",n_about:"எங்களைப் பற்றி",n_news:"செய்திகள்",n_pubs:"வெளியீடுகள்",n_connect:"தொடர்பு",n_team:"குழு",t_close:"மூடு",t_exp:"நிபுணத்துவம்",t_contact:"தொடர்புக்கு",t_links:"சுயவிவரங்கள்",h_overview:"கண்ணோட்டம்",h_mission:"எங்கள் நோக்கம்:",h_glance:"நிறுவனம் ஒரு பார்வையில்",h_specs:"சிறப்புத் துறைகள்",h_news:"சமீபத்திய தகவல்கள்",request:"சேவைகளைக் கோருங்கள்",search:"வெளியீடுகளைத் தேடுக…",all:"அனைத்து ஆண்டுகள்",cited:"மேற்கோள்",none:"பொருத்தம் இல்லை.",more:"மேலும் படிக்க",phone:"தொலைபேசி",email:"மின்னஞ்சல்",avail:"கிடைக்கும் முறை",price:"விலை"}};
+const TX={
+sv:{overview:"RESCON är ett oberoende forskningskonsultföretag baserat i Borås, Sverige, som arbetar för datakvalitet och hälsojämlikhet inom life science, akademi och offentlig politik.\n\nVi är specialiserade på att utforma och genomföra rigorösa, nationella vetenskapliga enkätundersökningar som kartlägger sambandet mellan sociodemografiskt beteende och moderna sjukvårdssystem. Vårt huvudsakliga forskningsfokus är att belysa viktiga demografiska luckor i läkemedelsutveckling – särskilt allmänhetens kunskap, systematiska snedvridningar och patientsäkerhetsramverk för underrepresenterade och utsatta grupper (såsom gravida kvinnor, barn, äldre, personer med funktionsnedsättning och flyktingar).",
+mission:"Att främja hälsojämlikhet, mångfald i kliniska prövningar och sociodemografisk forskning i Sverige.\n\nGenom högkvalitativ, etiskt utformad och makroaggregerad datainsamling överbryggar RESCON klyftan mellan läkemedelssäkerhetsstandarder, akademiska sociodemografiska insikter och evidensbaserade folkhälsoregler. Vi tillhandahåller det empiriska underlag som krävs för att bygga säkrare, mer representativa och inkluderande sjukvårdssystem för alla samhällsmedlemmar.",
+svdesc:"RESCON är ett forskningskonsultföretag med FA-skatt under ledning av Professor Kutty Selva Nandakumar. Vi genomför en nationell enkätundersökning om folkhälsa, sociodemografiska trender och medicinsk jämlikhet i Sverige.",
+facts:"Bransch: Forskningstjänster\nFöretagsstorlek: 11–50 anställda\nGrundat: 2023\nTyp: Egenägt\nHuvudkontor: Borås, Västra Götalands län\nArbetsplats: Hybrid, flexibel närvaro på plats\nPlatser: Sverige",
+specs:"Mångfald i kliniska prövningar, Hälsojämlikhet, Folkhälsopolitik, Sociodemografisk forskning, Utformning av vetenskapliga enkäter, Läkemedelsforskning, Kvantitativ dataanalys",
+atext:"Docent i medicinsk inflammationsvetenskap och ledare för RESCON. Forskningsintressen: inflammation, immunologi, biokemi, mikrobiologi och dermatologi. Verifierad e-post hos hh.se.",
+avail:"Distans",pricing:"Kontakta oss för pris",svc:["Projektledning","Innehållsstrategi","Marknadsundersökning","Affärsrådgivning"]},
+ta:{overview:"RESCON என்பது ஸ்வீடனின் போராஸ் (Borås) நகரை மையமாகக் கொண்ட ஒரு சுதந்திரமான ஆராய்ச்சி ஆலோசனை நிறுவனமாகும்; வாழ்க்கை அறிவியல், கல்வித்துறை மற்றும் பொதுக் கொள்கைத் துறைகளில் தரவுச் சிறப்பையும் சுகாதாரச் சமத்துவத்தையும் முன்னெடுப்பதே இதன் நோக்கம்.\n\nசமூக-மக்கள்தொகை நடத்தைக்கும் நவீன சுகாதார அமைப்புகளுக்கும் இடையிலான தொடர்பை வரைபடமாக்கும் கடுமையான, நாடு தழுவிய அறிவியல் கணக்கெடுப்புகளை வடிவமைத்து நடத்துவதில் நாங்கள் நிபுணத்துவம் பெற்றவர்கள். மருந்து உருவாக்கத்தில் உள்ள முக்கிய மக்கள்தொகை இடைவெளிகளை—குறிப்பாக பொது விழிப்புணர்வு, அமைப்பு சார்ந்த சார்புகள், மற்றும் குறைவாகப் பிரதிநிதித்துவம் பெற்ற, பாதிக்கப்படக்கூடிய மக்களை (கர்ப்பிணிப் பெண்கள், குழந்தைகள், முதியோர், மாற்றுத்திறனாளிகள், அகதிகள்) சுற்றியுள்ள நோயாளி பாதுகாப்பு கட்டமைப்புகளை—ஆய்வு செய்வது எங்கள் முதன்மை ஆராய்ச்சி கவனம்.",
+mission:"ஸ்வீடன் முழுவதும் சுகாதாரச் சமத்துவம், மருத்துவப் பரிசோதனைகளில் பன்முகத்தன்மை மற்றும் சமூக-மக்கள்தொகை ஆராய்ச்சியை முன்னெடுத்தல்.\n\nஉயர்தரமான, நெறிமுறையுடன் வடிவமைக்கப்பட்ட, பெருந்தொகுப்புத் தரவு சேகரிப்பின் மூலம், மருந்துப் பாதுகாப்புத் தரநிலைகள், கல்வி சார்ந்த சமூக-மக்கள்தொகை நுண்ணறிவுகள் மற்றும் சான்றுகள் அடிப்படையிலான பொது சுகாதார விதிமுறைகளுக்கிடையிலான இடைவெளியை RESCON குறைக்கிறது. சமூகத்தின் அனைத்து உறுப்பினர்களுக்கும் பாதுகாப்பான, அனைவரையும் உள்ளடக்கிய சுகாதார அமைப்புகளை உருவாக்கத் தேவையான அனுபவ அடிப்படையை நாங்கள் வழங்குகிறோம்.",
+svdesc:"RESCON என்பது பேராசிரியர் குட்டி செல்வ நந்தகுமார் தலைமையில் இயங்கும், F-வரி (FA-skatt) நிலை கொண்ட ஆராய்ச்சி ஆலோசனை நிறுவனமாகும். ஸ்வீடனில் பொது சுகாதாரம், சமூக-மக்கள்தொகைப் போக்குகள் மற்றும் மருத்துவச் சமத்துவம் குறித்த தேசிய அளவிலான கணக்கெடுப்பை நாங்கள் நடத்தி வருகிறோம்.",
+facts:"தொழில்துறை: ஆராய்ச்சிச் சேவைகள்\nநிறுவன அளவு: 11–50 ஊழியர்கள்\nநிறுவப்பட்டது: 2023\nவகை: சுயசொந்தமானது\nதலைமையகம்: போராஸ், வெஸ்த்ரா யோத்தாலாந்து மாகாணம்\nபணியிடம்: கலப்பு முறை, நெகிழ்வான நேரடிப் பணி\nஇடங்கள்: ஸ்வீடன்",
+specs:"மருத்துவப் பரிசோதனைப் பன்முகத்தன்மை, சுகாதாரச் சமத்துவம், பொது சுகாதாரக் கொள்கை, சமூக-மக்கள்தொகை ஆராய்ச்சி, அறிவியல் கணக்கெடுப்பு வடிவமைப்பு, மருந்தியல் ஆராய்ச்சி, அளவுசார் தரவுப் பகுப்பாய்வு",
+atext:"மருத்துவ அழற்சி அறிவியலில் டோசென்ட் (Docent) மற்றும் RESCON தலைவர். ஆராய்ச்சி ஆர்வங்கள்: அழற்சி, நோயெதிர்ப்பியல், உயிர்வேதியியல், நுண்ணுயிரியல் மற்றும் தோல் மருத்துவம். hh.se இல் சரிபார்க்கப்பட்ட மின்னஞ்சல்.",
+avail:"தொலைநிலை",pricing:"விலைக்கு எங்களைத் தொடர்பு கொள்ளவும்",svc:["திட்ட மேலாண்மை","உள்ளடக்க உத்தி","சந்தை ஆராய்ச்சி","வணிக ஆலோசனை"]}};
+let S=JSON.parse(JSON.stringify(DEF)),db=null,ref=null,assets=null,tab="General",saving=false,lang="en";
+try{const l=localStorage.getItem("lang");if(UI[l])lang=l}catch(e){}
+const $=i=>document.getElementById(i);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const T=k=>UI[lang][k];
+const tr=k=>{const v=S.s[k];return lang!=="en"&&v===DEF.s[k]&&TX[lang][k]?TX[lang][k]:v};
+
+function view(){const s=S.s;document.documentElement.lang=lang;
+document.querySelectorAll('[data-i]').forEach(e=>e.textContent=T(e.dataset.i));
+[...$('lang').children].forEach(b=>b.classList.toggle('on',b.dataset.l===lang));
+$('q').placeholder=T('search');
+$('banner').innerHTML=s.banner?`<img src="${esc(A(s.banner))}" alt="RESCON">`:`<h1>RESCON</h1>`;
+$('contact').textContent=[s.address,s.email&&T('email')+": "+s.email].filter(Boolean).join(" · ");
+$('overview').textContent=tr('overview');$('mission').textContent=tr('mission');
+$('svdesc').textContent=tr('svdesc');
+$('chips').innerHTML=S.services.map((x,i)=>`<span>${esc(lang!=="en"&&x===DEF.services[i]?TX[lang].svc[i]:x)}</span>`).join("");
+$('svmeta').innerHTML=[[T('avail'),tr('avail')],[T('price'),tr('pricing')]].filter(x=>x[1]).map(x=>`<div><b>${esc(x[0])}</b>${esc(x[1])}</div>`).join("");
+$('facts').innerHTML=String(tr('facts')||"").split("\n").filter(l=>l.includes(":")).map(l=>{const i=l.indexOf(":");return `<div><b>${esc(l.slice(0,i).trim())}</b>${esc(l.slice(i+1).trim())}</div>`}).join("");
+$('specs').innerHTML=String(tr('specs')||"").split(",").map(x=>x.trim()).filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join("");
+$('photo').innerHTML=s.photo?`<img src="${esc(A(s.photo))}" alt="">`:"";
+$('aname').textContent=s.aname;$('atext').textContent=tr('atext');
+$('team').hidden=!S.team.length;
+$('tgrid').innerHTML=S.team.map((m,i)=>`<div class="card tc" data-tm="${i}" tabindex="0" role="button"><div class="av">${m.photo?`<img src="${esc(A(m.photo))}" alt="">`:esc(ini(m.name))}</div><h3>${esc(m.name)}</h3><div class="meta">${esc(m.role)}</div></div>`).join("");
+$('news').hidden=!S.news.length;
+$('newslist').innerHTML=[...S.news].sort((a,b)=>String(b.d).localeCompare(String(a.d))).map(n=>`<div class="card"><div class="meta">${esc(n.d)}</div><h3>${esc(n.t)}</h3><p>${esc(n.x)}</p>${n.l?`<a href="${esc(safe(n.l))}" target="_blank" rel="noopener">${T('more')}</a>`:""}</div>`).join("");
+const ys=[...new Set(S.pubs.map(p=>p.y))].sort((a,b)=>b-a),cur=$('yr').value;
+$('yr').innerHTML=`<option value="">${T('all')}</option>`+ys.map(y=>`<option ${y==cur?'selected':''}>${y}</option>`).join("");
+lst();}
+function lst(){const q=$('q').value.toLowerCase(),y=$('yr').value;
+$('list').innerHTML=S.pubs.filter(p=>(!y||p.y==y)&&(!q||(p.t+p.tp+(p.a||'')).toLowerCase().includes(q))).sort((a,b)=>(b.c||0)-(a.c||0)||b.y-a.y).map(p=>`<div class="card"><h3>${p.l?`<a href="${esc(safe(p.l))}" target="_blank" rel="noopener">${esc(p.t)}</a>`:esc(p.t)}</h3><div class="meta">${esc(p.a)}</div><div class="meta">${esc(p.v)} · ${esc(p.y)}${p.c?` · ${T('cited')} ${esc(p.c)}`:""}</div>${p.tp?`<span class="tag">${esc(p.tp)}</span>`:""}</div>`).join("")||`<p class="meta">${T('none')}</p>`;}
+const ini=n=>String(n||"").split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0].toUpperCase()).join("");
+const safe=u=>/^https?:\/\//i.test(u||"")?u:"";
+function openT(i){const m=S.team[i];if(!m)return;
+const row=(l,v)=>v?`<div class="crow"><b>${l}</b><span>${v}</span></div>`:"";
+const lk=(u,t)=>safe(u)?`<a href="${esc(safe(u))}" target="_blank" rel="noopener">${t}</a>`:"";
+$('tbody').innerHTML=`<div class="av tside-av">${m.photo?`<img src="${esc(A(m.photo))}" alt="">`:esc(ini(m.name))}</div><h2 style="text-align:center;margin-bottom:2px">${esc(m.name)}</h2><div class="meta" style="text-align:center;margin-bottom:14px">${esc(m.role)}</div>${m.bio?`<p>${esc(m.bio)}</p>`:""}${m.expertise?`<h3 style="color:var(--navy);margin-top:12px">${T('t_exp')}</h3><div class="chips">${m.expertise.split(",").map(x=>x.trim()).filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join("")}</div>`:""}<h3 style="color:var(--navy);margin-top:16px">${T('t_contact')}</h3>${row(T('email'),m.email?`<a href="mailto:${esc(m.email)}">${esc(m.email)}</a>`:"")}${row(T('t_links'),[lk(m.scholar,"Google Scholar"),lk(m.linkedin,"LinkedIn")].filter(Boolean).join(" · "))}`;
+$('tside').classList.add('open');$('tover').classList.add('open');}
+function closeT(){$('tside').classList.remove('open');$('tover').classList.remove('open');}
+$('tgrid').onclick=e=>{const c=e.target.closest('[data-tm]');if(c)openT(+c.dataset.tm)};
+$('tgrid').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){const c=e.target.closest('[data-tm]');if(c){e.preventDefault();openT(+c.dataset.tm)}}};
+$('tclose').onclick=closeT;$('tover').onclick=closeT;document.addEventListener('keydown',e=>{if(e.key==='Escape')closeT()});
+$('lang').onclick=e=>{const l=e.target.dataset.l;if(l){lang=l;try{localStorage.setItem("lang",l)}catch(x){}view()}};
+$('q').oninput=lst;$('yr').onchange=lst;$('y').textContent=new Date().getFullYear();view();
+
+/* ---------- admin ---------- */
+const TABS=["General","Content","Team","News","Services","Publications"];
+$('tabs').innerHTML=TABS.map(t=>`<button data-t="${t}">${t}</button>`).join("");
+$('tabs').onclick=e=>{if(e.target.dataset.t){tab=e.target.dataset.t;form();}};
+const F=(k,l,ta)=>`<div><label>${l}</label>${ta?`<textarea rows="${ta}" data-k="${k}">${esc(S.s[k])}</textarea>`:`<input data-k="${k}" value="${esc(S.s[k])}">`}</div>`;
+const U=(k,l)=>`<div><label>${l}</label><input type="file" accept="image/*,.gif" data-up="${k}">${S.s[k]?`<button class="btn d sm" data-clr="${k}" style="margin-top:6px">Remove image</button>`:""}</div>`;
+function form(){
+[...$('tabs').children].forEach(b=>b.classList.toggle('on',b.dataset.t===tab));let h="";
+if(tab==="General")h=F("address","Address")+F("email","Email")+U("banner","Banner / GIF image")+`<p class="meta">Note: Swedish and Tamil versions appear only while a text is still the original default. Text you edit is shown as written in every language.</p>`;
+if(tab==="Content")h=F("overview","Overview",7)+F("mission","Mission",7)+F("facts","Company facts (one 'Label: value' per line)",7)+F("specs","Specialties (comma-separated)",4)+F("aname","Profile heading")+F("atext","Profile text",6)+U("photo","Profile photo");
+if(tab==="News")h=S.news.map((n,i)=>`<div class="card" style="display:grid;gap:6px"><div><label>Title</label><input data-n="${i}" data-f="t" value="${esc(n.t)}"></div><div style="display:grid;grid-template-columns:140px 1fr;gap:6px"><div><label>Date</label><input type="date" data-n="${i}" data-f="d" value="${esc(n.d)}"></div><div><label>Link (optional)</label><input data-n="${i}" data-f="l" value="${esc(n.l)}"></div></div><div><label>Text</label><textarea rows="4" data-n="${i}" data-f="x">${esc(n.x)}</textarea></div><button class="btn d sm" data-dn="${i}" style="justify-self:start">Delete</button></div>`).join("")+`<button class="btn o" id="addn">+ Add post</button>`;
+if(tab==="Team")h=S.team.map((m,i)=>`<div class="card" style="display:grid;gap:6px"><div><label>Name</label><input data-m="${i}" data-f="name" value="${esc(m.name)}"></div><div><label>Role / title</label><input data-m="${i}" data-f="role" value="${esc(m.role)}"></div><div><label>Biography</label><textarea rows="4" data-m="${i}" data-f="bio">${esc(m.bio)}</textarea></div><div><label>Expertise (comma-separated)</label><input data-m="${i}" data-f="expertise" value="${esc(m.expertise)}"></div><div><label>Email</label><input data-m="${i}" data-f="email" value="${esc(m.email)}"></div><div><label>Google Scholar URL</label><input data-m="${i}" data-f="scholar" value="${esc(m.scholar)}"></div><div><label>LinkedIn URL</label><input data-m="${i}" data-f="linkedin" value="${esc(m.linkedin)}"></div><div><label>Photo</label><input type="file" accept="image/*" data-upm="${i}">${m.photo?`<button class="btn d sm" data-clrm="${i}" style="margin-top:6px">Remove photo</button>`:""}</div><button class="btn d sm" data-dm="${i}" style="justify-self:start">Remove member</button></div>`).join("")+`<button class="btn o" id="addm">+ Add team member</button>`;
+if(tab==="Services")h=F("svdesc","Services description",7)+F("avail","Availability")+F("pricing","Pricing")+S.services.map((x,i)=>`<div class="row"><input data-sv="${i}" value="${esc(x)}"><button class="btn d sm" data-dsv="${i}">Delete</button></div>`).join("")+`<button class="btn o" id="addsv">+ Add service</button>`;
+if(tab==="Publications")h=S.pubs.map((p,i)=>`<div class="card" style="display:grid;gap:6px"><div><label>Title</label><input data-p="${i}" data-f="t" value="${esc(p.t)}"></div><div><label>Authors</label><input data-p="${i}" data-f="a" value="${esc(p.a)}"></div><div style="display:grid;grid-template-columns:90px 90px 1fr;gap:6px"><div><label>Cited by</label><input data-p="${i}" data-f="c" value="${esc(p.c)}"></div><div><label>Year</label><input data-p="${i}" data-f="y" value="${esc(p.y)}"></div><div><label>Journal / venue</label><input data-p="${i}" data-f="v" value="${esc(p.v)}"></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><div><label>Topic</label><input data-p="${i}" data-f="tp" value="${esc(p.tp)}"></div><div><label>Link (URL)</label><input data-p="${i}" data-f="l" value="${esc(p.l)}"></div></div><button class="btn d sm" data-dp="${i}" style="justify-self:start">Delete</button></div>`).join("")+`<button class="btn o" id="addp">+ Add publication</button>`;
+$('pb').innerHTML=h;}
+$('pb').addEventListener('input',e=>{const d=e.target.dataset;
+if(d.k)S.s[d.k]=e.target.value;else if(d.sv!==undefined)S.services[d.sv]=e.target.value;else if(d.m!==undefined)S.team[d.m][d.f]=e.target.value;else if(d.n!==undefined)S.news[d.n][d.f]=e.target.value;else if(d.p!==undefined)S.pubs[d.p][d.f]=(d.f==="y"||d.f==="c")?(parseInt(e.target.value)||e.target.value):e.target.value;
+view();});
+$('pb').addEventListener('click',e=>{const d=e.target.dataset;let ch=true;
+if(d.dsv!==undefined)S.services.splice(d.dsv,1);else if(d.dp!==undefined){if(confirm("Delete this publication?"))S.pubs.splice(d.dp,1);}
+else if(d.clr)S.s[d.clr]="";else if(e.target.id==="addsv")S.services.push("New service");else if(d.dn!==undefined){if(confirm("Delete this post?"))S.news.splice(d.dn,1);}else if(e.target.id==="addn")S.news.unshift({t:"New post",d:new Date().toISOString().slice(0,10),x:"",l:""});
+else if(d.dm!==undefined){if(confirm("Remove this team member?"))S.team.splice(d.dm,1);}else if(d.clrm!==undefined)S.team[d.clrm].photo="";else if(e.target.id==="addm")S.team.push({id:"t"+Date.now(),name:"New member",role:"",photo:"",bio:"",expertise:"",email:"",scholar:"",linkedin:""});else if(e.target.id==="addp")S.pubs.unshift({id:"p"+Date.now(),t:"New publication",a:"",c:0,y:new Date().getFullYear(),v:"",tp:"",l:""});else ch=false;
+if(ch){view();form();}});
+$('pb').addEventListener('change',async e=>{const k=e.target.dataset.up,m=e.target.dataset.upm;if(!(k||m!==undefined)||!e.target.files[0])return;
+try{msg("Uploading…");const r=await upl(e.target.files[0]);if(m!==undefined)S.team[m].photo=r.url;else S.s[k]=r.url;view();form();msg("Uploaded. Click Save.")}catch(x){msg("Upload failed")}});
+function msg(t){$('msg').textContent=t}
+$('save').onclick=async()=>{try{msg("Saving…");const r=await api("/api/site",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(S)});msg(r.ok?"Saved ✓":r.status===401?"Session expired, log in again":"Save failed")}catch(x){msg("Server not reachable")}};
+$('fab').onclick=()=>{$('panel').classList.add('open');form()};$('close').onclick=()=>$('panel').classList.remove('open');
+async function api(path,opt={}){const hd=opt.headers||{};if(token)hd.Authorization="Bearer "+token;const r=await fetch(API+path,{...opt,headers:hd});if(r.status===401)setTok(null);return r}
+function setTok(t){token=t;try{t?localStorage.setItem("rescon_token",t):localStorage.removeItem("rescon_token")}catch(e){}$('fab').style.display=t?"block":"none";if(!t)$('panel').classList.remove('open')}
+async function upl(file){const fd=new FormData();fd.append("file",file);const r=await api("/api/upload",{method:"POST",body:fd});if(!r.ok)throw new Error("upload");return r.json()}
+function openLogin(){$('login').hidden=false;$('le').focus()}
+$('adminlink').onclick=e=>{e.preventDefault();if(token){$('panel').classList.add('open');form()}else openLogin()};
+$('lcancel').onclick=()=>{$('login').hidden=true};
+async function doLogin(){$('lmsg').textContent="…";try{const r=await fetch(API+"/api/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:$('le').value.trim(),password:$('lp').value})});if(!r.ok){$('lmsg').textContent=r.status===429?"Too many attempts, try later":"Wrong email or password";return}const j=await r.json();setTok(j.token);$('lp').value="";$('lmsg').textContent="";$('login').hidden=true;$('panel').classList.add('open');form()}catch(e){$('lmsg').textContent="Server not reachable"}}
+$('lgo').onclick=doLogin;$('lp').onkeydown=e=>{if(e.key==="Enter")doLogin()};
+$('logout').onclick=()=>setTok(null);
+(async()=>{setTok(token);
+try{const r=await fetch(API+"/api/site");if(r.ok){const x=await r.json();if(x&&x.s){S={s:{...DEF.s,...x.s},services:x.services||DEF.services,news:x.news||[],team:x.team||DEF.team,pubs:x.pubs||DEF.pubs};view();}}}catch(e){}
+if(token){try{await api("/api/me")}catch(e){}}
+})();
+;
+</script>
+</body>
+</html>

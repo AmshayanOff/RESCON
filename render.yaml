@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: rescon-site
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_ORIGIN
+        sync: false
+      # --- Persistent storage (paid Render plan). Without it, edits and uploads
+      # --- are lost on every redeploy. Uncomment these 5 lines on a paid plan:
+      # - key: DATA_DIR
+      #   value: /var/data
+    # disk:
+    #   name: rescon-data
+    #   mountPath: /var/data
+    #   sizeGB: 1
